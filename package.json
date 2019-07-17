@@ -3,12 +3,17 @@
   "name": "@denysvuika/preact-translate",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "dist/preact-translate.cjs.js",
+  "module": "dist/preact-translate.esm.js",
+  "browser": "dist/preact-translate.umd.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build.lib": "rollup -c",
+    "build.lib.dev": "rollup -c -w"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
@@ -20,7 +25,10 @@
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
-    "preact-cli": "^2.0.0"
+    "preact-cli": "^2.2.1",
+    "rollup": "^1.17.0",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0"
   },
   "dependencies": {
     "preact": "^8.2.1",
