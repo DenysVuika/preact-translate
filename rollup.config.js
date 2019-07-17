@@ -20,11 +20,11 @@ export default [
     },
     external: ['preact', 'preact/hooks'],
     plugins: [
-      resolve(), // so Rollup can find libs
       buble({
         jsx: 'h',
         objectAssign: true
       }),
+      resolve(), // so Rollup can find libs
       commonjs(), // so Rollup can convert libs to an ES module,
       copy({
         targets: [{ src: 'lib/package.json', dest: 'dist' }]
