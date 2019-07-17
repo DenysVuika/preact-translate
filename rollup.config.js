@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import buble from 'rollup-plugin-buble';
 import pkg from './package.json';
 
 export default [
@@ -11,9 +12,13 @@ export default [
 			file: pkg.browser,
 			format: 'umd'
 		},
+		external: ['preact'],
 		plugins: [
-			resolve(), // so Rollup can find `ms`
-			commonjs() // so Rollup can convert `ms` to an ES module
+			resolve(), // so Rollup can find libs
+			buble({
+				jsx: 'h'
+			}),
+			commonjs() // so Rollup can convert libs to an ES module
 		]
 	},
 
@@ -26,6 +31,11 @@ export default [
 	{
 		input: 'lib/src/main.js',
 		external: ['preact'],
+		plugins: [
+			buble({
+				jsx: 'h'
+			}),
+		],
 		output: [
 			{ file: pkg.main, format: 'cjs' },
 			{ file: pkg.module, format: 'es' }
