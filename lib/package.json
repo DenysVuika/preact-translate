@@ -1,20 +1,17 @@
 {
-    "private": true,
-    "name": "@denysvuika/preact-translate",
-    "version": "0.0.1",
-    "author": {
-      "name": "Denys Vuika",
-      "email": "denys.vuika@gmail.com",
-      "url": "https://denys.dev"
-    },
-    "license": "MIT",
-    "main": "preact-translate.cjs.js",
-    "module": "preact-translate.esm.js",
-    "browser": "preact-translate.umd.js",
-    "dependencies": {
-      "preact": "^8.2.1",
-      "preact-compat": "^3.17.0",
-      "preact-render-to-string": "^4.1.0"
-    }
+  "private": true,
+  "name": "@denysvuika/preact-translate",
+  "version": "0.0.1",
+  "author": {
+    "name": "Denys Vuika",
+    "email": "denys.vuika@gmail.com",
+    "url": "https://denys.dev"
+  },
+  "license": "MIT",
+  "main": "preact-translate.cjs.js",
+  "module": "preact-translate.esm.js",
+  "browser": "preact-translate.umd.js",
+  "dependencies": {
+    "preact": "10.0.0-rc.0"
   }
-  
+}

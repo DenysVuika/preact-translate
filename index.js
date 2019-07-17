@@ -1,14 +1,16 @@
 import './style';
 import { Component } from 'preact';
-import TestComponent from './lib/src/testComponent';
+import { TranslateProvider } from './lib/main';
+import MainComponent from './src/main';
 
 export default class App extends Component {
-	render() {
-		return (
-			<div>
-				<TestComponent></TestComponent>
-				<h1>Hello, World!</h1>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <TranslateProvider root="assets">
+        <div>
+          <MainComponent />
+        </div>
+      </TranslateProvider>
+    );
+  }
 }
