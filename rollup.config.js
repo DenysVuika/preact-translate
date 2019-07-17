@@ -1,6 +1,8 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import buble from 'rollup-plugin-buble';
+import copy from 'rollup-plugin-copy'
+
 import pkg from './package.json';
 
 export default [
@@ -18,7 +20,10 @@ export default [
 			buble({
 				jsx: 'h'
 			}),
-			commonjs() // so Rollup can convert libs to an ES module
+			commonjs(), // so Rollup can convert libs to an ES module,
+			copy({
+				targets: [{ src: 'lib/package.json', dest: 'dist' }]
+			})
 		]
 	},
 
