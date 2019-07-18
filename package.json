@@ -22,10 +22,14 @@
     "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp dist/* node_modules/@denysvuika/preact-translate"
   },
   "eslintConfig": {
-    "extends": "eslint-config-synacor"
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
   },
   "eslintIgnore": [
-    "build/*"
+    "build/*",
+    "dist/*"
   ],
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -33,7 +37,7 @@
     "@babel/preset-env": "^7.5.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^4.5.0",
-    "eslint-config-synacor": "^1.1.0",
+    "eslint-plugin-react": "^7.14.2",
     "if-env": "^1.0.0",
     "preact-cli": "^2.2.1",
     "rollup": "^1.17.0",
@@ -44,7 +48,6 @@
   },
   "dependencies": {
     "preact": "10.0.0-rc.0",
-    "preact-compat": "^3.17.0",
-    "preact-render-to-string": "^4.1.0"
+    "preact-compat": "^3.17.0"
   }
 }
