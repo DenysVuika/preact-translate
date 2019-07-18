@@ -25,7 +25,7 @@ export default [
         sourceMap: true,
         plugins: [
           'transform-class-properties',
-          ['transform-react-jsx', { pragma: 'h' }]
+          ['@babel/plugin-transform-react-jsx', { pragma: 'h' }]
         ],
         exclude: 'node_modules/**' // only transpile our source code
       }),
@@ -51,7 +51,7 @@ export default [
         sourceMap: true,
         plugins: [
           'transform-class-properties',
-          ['transform-react-jsx', { pragma: 'h' }]
+          ['@babel/plugin-transform-react-jsx', { pragma: 'h' }]
         ],
         exclude: 'node_modules/**' // only transpile our source code
       })
