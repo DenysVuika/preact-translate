@@ -8,6 +8,7 @@
     "url": "https://denys.dev"
   },
   "license": "MIT",
+  "homepage": "https://github.com/DenysVuika/preact-translate",
   "main": "dist/preact-translate.cjs.js",
   "module": "dist/preact-translate.esm.js",
   "browser": "dist/preact-translate.umd.js",

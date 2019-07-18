@@ -25,7 +25,7 @@ import { TranslateProvider } from '@denysvuika/preact-translate';
 
 export default function App() {
   return (
-    <TranslateProvider root="assets">
+    <TranslateProvider>
       <MainComponent />
     </TranslateProvider>
   );
