@@ -1,4 +1,5 @@
 {
   "title": "[ua] Hello",
-  "subtitle": "[ua] World"
+  "subtitle": "[ua] World",
+  "hello": "Hello, {name}"
 }
