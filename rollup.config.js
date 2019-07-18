@@ -1,8 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import buble from 'rollup-plugin-buble';
+import babel from 'rollup-plugin-babel';
 import copy from 'rollup-plugin-copy';
-
 import pkg from './package.json';
 
 export default [
@@ -20,11 +19,16 @@ export default [
     },
     external: ['preact', 'preact/hooks'],
     plugins: [
-      buble({
-        jsx: 'h',
-        objectAssign: true
-      }),
       resolve(), // so Rollup can find libs
+      babel({
+        babelrc: false,
+        sourceMap: true,
+        plugins: [
+          'transform-class-properties',
+          ['transform-react-jsx', { pragma: 'h' }]
+        ],
+        exclude: 'node_modules/**' // only transpile our source code
+      }),
       commonjs(), // so Rollup can convert libs to an ES module,
       copy({
         targets: [{ src: 'lib/package.json', dest: 'dist' }]
@@ -42,9 +46,14 @@ export default [
     input: 'lib/main.js',
     external: ['preact', 'preact/hooks'],
     plugins: [
-      buble({
-        jsx: 'h',
-        objectAssign: true
+      babel({
+        babelrc: false,
+        sourceMap: true,
+        plugins: [
+          'transform-class-properties',
+          ['transform-react-jsx', { pragma: 'h' }]
+        ],
+        exclude: 'node_modules/**' // only transpile our source code
       })
     ],
     output: [

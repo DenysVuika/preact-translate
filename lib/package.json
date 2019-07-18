@@ -11,7 +11,7 @@
   "main": "preact-translate.cjs.js",
   "module": "preact-translate.esm.js",
   "browser": "preact-translate.umd.js",
-  "dependencies": {
-    "preact": "10.0.0-rc.0"
+  "peerDependencies": {
+    "preact": ">=10.0.0-rc.0"
   }
 }

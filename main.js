@@ -1,5 +1,5 @@
 import { useContext } from 'preact/hooks';
-import { TranslateContext } from './lib/main';
+import { TranslateContext } from '@denysvuika/preact-translate';
 
 export default function MainComponent() {
   const { setLang, t, lang } = useContext(TranslateContext);

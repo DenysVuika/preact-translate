@@ -1,6 +1,6 @@
 import './style';
 import { Component } from 'preact';
-import { TranslateProvider } from './lib/main';
+import { TranslateProvider } from '@denysvuika/preact-translate';
 import MainComponent from './main';
 
 export default class App extends Component {

@@ -17,8 +17,9 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
-    "build.lib": "rollup -c",
-    "build.lib.dev": "rollup -c -w"
+    "build.lib": "rollup -c && yarn copy:modules",
+    "build.lib.dev": "rollup -c -w",
+    "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp dist/* node_modules/@denysvuika/preact-translate"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
@@ -27,12 +28,16 @@
     "build/*"
   ],
   "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
     "preact-cli": "^2.2.1",
     "rollup": "^1.17.0",
-    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-copy": "^3.0.0",
     "rollup-plugin-node-resolve": "^5.2.0"
