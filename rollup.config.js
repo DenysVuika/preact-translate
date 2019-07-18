@@ -2,6 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import copy from 'rollup-plugin-copy';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 export default [
@@ -32,7 +33,8 @@ export default [
       commonjs(), // so Rollup can convert libs to an ES module,
       copy({
         targets: [{ src: 'lib/package.json', dest: 'dist' }]
-      })
+      }),
+      terser()
     ]
   },
 
@@ -54,7 +56,8 @@ export default [
           ['@babel/plugin-transform-react-jsx', { pragma: 'h' }]
         ],
         exclude: 'node_modules/**' // only transpile our source code
-      })
+      }),
+      terser()
     ],
     output: [
       { file: pkg.main, format: 'cjs' },

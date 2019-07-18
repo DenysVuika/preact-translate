@@ -7,9 +7,7 @@ export default class App extends Component {
   render() {
     return (
       <TranslateProvider root="assets">
-        <div>
-          <MainComponent />
-        </div>
+        <MainComponent />
       </TranslateProvider>
     );
   }
