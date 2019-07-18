@@ -4,7 +4,7 @@ import MainComponent from './main';
 
 export default function App() {
   return (
-    <TranslateProvider root="assets">
+    <TranslateProvider>
       <MainComponent />
     </TranslateProvider>
   );
