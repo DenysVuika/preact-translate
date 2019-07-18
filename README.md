@@ -110,3 +110,19 @@ export default function App() {
   );
 }
 ```
+
+## Formatted translations
+
+You can use runtime string substitution when translating text
+
+```json
+{
+  "hello": "Hello, {name}"
+}
+```
+
+Then in the JSX:
+
+```jsx
+<div>{t('hello', { name: 'Bob' })}</div>
+```
