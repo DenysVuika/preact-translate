@@ -2,6 +2,8 @@
 
 Minimalistic translate (i18n) library for Preact
 
+Live example: [Sandbox](https://codesandbox.io/embed/preact-translate-npm-tpe4f)
+
 ## Installing
 
 Using Yarn:
