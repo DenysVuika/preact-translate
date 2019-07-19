@@ -2,6 +2,8 @@
 
 Minimalistic translate (i18n) library for Preact
 
+[![Build Status](https://dev.azure.com/denysvuika/preact-translate/_apis/build/status/DenysVuika.preact-translate?branchName=master)](https://dev.azure.com/denysvuika/preact-translate/_build/latest?definitionId=3&branchName=master)
+
 Live example: [Sandbox](https://codesandbox.io/embed/preact-translate-npm-tpe4f)
 
 ## Installing
