@@ -8,6 +8,8 @@ Live example: [Sandbox](https://codesandbox.io/embed/preact-translate-npm-tpe4f)
 
 ## Installing
 
+Minimal requirements: **Preact 10.0.0-rc.0**
+
 Using Yarn:
 
 ```sh
