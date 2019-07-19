@@ -1,5 +1,6 @@
 {
   "title": "Hello",
   "subtitle": "World",
-  "hello": "Hello, {name}"
+  "hello": "Hello, {name}",
+  "fallback": "[en] fallback"
 }

@@ -14,6 +14,7 @@ function MainComponent() {
       <div>{t('title')}</div>
       <div>{t('subtitle')}</div>
       <div>Formatted: {t('hello', { name: 'Bob' })}</div>
+      <div>Fallback: {t('fallback')}</div>
       <div>
         <button onClick={() => setLang('en')}>EN</button>
         <button onClick={() => setLang('ua')}>UA</button>
