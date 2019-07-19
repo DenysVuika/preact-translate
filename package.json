@@ -33,10 +33,6 @@
     "dist/*"
   ],
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/preset-env": "^7.5.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^4.5.0",
     "eslint-plugin-react": "^7.14.2",
     "if-env": "^1.0.0",
