@@ -20,7 +20,7 @@
     "lint": "eslint src",
     "build.lib": "rollup -c && yarn copy:modules",
     "build.lib.dev": "rollup -c -w",
-    "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp dist/* node_modules/@denysvuika/preact-translate"
+    "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp -r dist/* node_modules/@denysvuika/preact-translate"
   },
   "eslintConfig": {
     "extends": [
@@ -42,11 +42,10 @@
     "if-env": "^1.0.0",
     "preact-cli": "^2.2.1",
     "rollup": "^1.17.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-copy": "^3.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.1.1"
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-typescript2": "^0.22.0",
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "preact": "10.0.0-rc.0",

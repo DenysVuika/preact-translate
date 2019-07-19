@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { createContext } from 'preact';
 import useTranslate from './useTranslate';
 
-const TranslateContext = createContext();
+const TranslateContext = createContext(null);
 
 const defaultOptions = {
   root: 'assets',

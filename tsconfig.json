@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist",
+    "module": "es6",
+    "outDir": "./dist",
+    "target": "es5",
+
+    "downlevelIteration": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules"]
+}
