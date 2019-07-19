@@ -129,6 +129,28 @@ Then in the JSX:
 <div>{t('hello', { name: 'Bob' })}</div>
 ```
 
+## Nested translations
+
+The library supports complex objects with nested levels.
+
+Put the following in the `en.json` file:
+
+```json
+{
+  "messages": {
+    "errors": {
+      "404": "Sorry, not found"
+    }
+  }
+}
+```
+
+Then in the JSX use:
+
+```jsx
+<div>{t('messages.errors.404')}</div>
+```
+
 ## Default language
 
 You can set the default language to use with the application by assigning the `TranslateProvider.lang` property.

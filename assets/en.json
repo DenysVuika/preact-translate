@@ -2,5 +2,10 @@
   "title": "Hello",
   "subtitle": "World",
   "hello": "Hello, {name}",
-  "fallback": "[en] fallback"
+  "fallback": "[en] fallback",
+  "messages": {
+    "errors": {
+      "404": "Sorry, not found"
+    }
+  }
 }

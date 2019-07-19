@@ -15,6 +15,7 @@ function MainComponent() {
       <div>{t('subtitle')}</div>
       <div>Formatted: {t('hello', { name: 'Bob' })}</div>
       <div>Fallback: {t('fallback')}</div>
+      <div>Nested: {t('messages.errors.404')}</div>
       <div>
         <button onClick={() => setLang('en')}>EN</button>
         <button onClick={() => setLang('ua')}>UA</button>

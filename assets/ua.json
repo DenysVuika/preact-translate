@@ -1,5 +1,10 @@
 {
   "title": "[ua] Hello",
   "subtitle": "[ua] World",
-  "hello": "Hello, {name}"
+  "hello": "Hello, {name}",
+  "messages": {
+    "errors": {
+      "404": "[ua] Sorry, not found"
+    }
+  }
 }
