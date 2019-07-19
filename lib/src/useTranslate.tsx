@@ -1,38 +1,45 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
+import { TranslateOptions } from './translateOptions';
 
 const data = {};
-const defaultOptions = {
+const defaultOptions: TranslateOptions = {
   root: '',
   lang: 'en',
   fallbackLang: 'en'
 };
 
-export default function useTranslate(options) {
+export default function useTranslate(options: TranslateOptions) {
   options = Object.assign({}, defaultOptions, options);
 
   const [lang, setLang] = useState(options.lang);
   const [, setValue] = useState(data);
   const [isReady, setReady] = useState(false);
 
-  const loadData = lang => {
-    if (!data.hasOwnProperty(lang) || Object.keys(data[lang]).length === 0) {
-      setReady(false);
-
-      const url = getLangUrl(options.root, lang);
-
-      fetch(url)
-        .then(results => results.json())
-        .then(resource => {
-          data[lang] = resource;
-          setValue({ ...data });
-          setReady(true);
-        })
-        .catch(error => {
-          console.log('Aww, snap.', error);
-          setValue({ ...data });
-          setReady(true);
-        });
+  const loadData = (langKey: string) => {
+    if (data.hasOwnProperty(langKey) && Object.keys(data[langKey]).length > 0) {
+      return;
     }
+    // if (
+    //   !data.hasOwnProperty(langKey) ||
+    //   Object.keys(data[langKey]).length === 0
+    // ) {
+    setReady(false);
+
+    const url = getLangUrl(options.root, langKey);
+
+    fetch(url)
+      .then(results => results.json())
+      .then(resource => {
+        data[langKey] = resource;
+        setValue({ ...data });
+        setReady(true);
+      })
+      .catch(error => {
+        console.log('Aww, snap.', error);
+        setValue({ ...data });
+        setReady(true);
+      });
+    // }
   };
 
   useEffect(() => {
@@ -40,7 +47,7 @@ export default function useTranslate(options) {
     loadData(lang);
   }, [lang]);
 
-  const t = (key, params) => {
+  const t = (key: string, params: any) => {
     if (!data.hasOwnProperty(lang)) {
       return key;
     }
@@ -52,7 +59,7 @@ export default function useTranslate(options) {
   return { lang, setLang, t, isReady };
 }
 
-function format(str, params) {
+function format(str: string, params: any): string {
   let result = str;
 
   if (params) {
@@ -67,6 +74,6 @@ function format(str, params) {
   return result;
 }
 
-function getLangUrl(root, lang) {
+function getLangUrl(root: string, lang: string): string {
   return [root, root.endsWith('/') ? '' : '/', lang, '.json'].join('');
 }

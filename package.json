@@ -17,7 +17,7 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src",
+    "lint": "eslint src && tslint --project .",
     "build.lib": "rollup -c && yarn copy:modules",
     "build.lib.dev": "rollup -c -w",
     "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp -r dist/* node_modules/@denysvuika/preact-translate"
@@ -25,7 +25,8 @@
   "eslintConfig": {
     "extends": [
       "eslint:recommended",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
     ]
   },
   "eslintIgnore": [
@@ -34,13 +35,20 @@
   ],
   "devDependencies": {
     "eslint": "^4.5.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "if-env": "^1.0.0",
     "preact-cli": "^2.2.1",
+    "prettier": "^1.18.2",
     "rollup": "^1.17.0",
     "rollup-plugin-copy": "^3.0.0",
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript2": "^0.22.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-consistent-codestyle": "^1.15.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {

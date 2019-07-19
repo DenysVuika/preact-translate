@@ -1,10 +1,10 @@
-import { h } from 'preact';
-import { createContext } from 'preact';
+import { createContext, h } from 'preact';
+import { TranslateOptions } from './translateOptions';
 import useTranslate from './useTranslate';
 
 const TranslateContext = createContext(null);
 
-const defaultOptions = {
+const defaultOptions: TranslateOptions = {
   root: 'assets',
   lang: 'en'
 };
