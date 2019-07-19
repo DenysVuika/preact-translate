@@ -126,3 +126,16 @@ Then in the JSX:
 ```jsx
 <div>{t('hello', { name: 'Bob' })}</div>
 ```
+
+## Default language
+
+You can set the default language to use with the application by assigning the `TranslateProvider.lang` property.
+
+```html
+<TranslateProvider lang="ua">
+  <Application />
+</TranslateProvider>
+```
+
+Please note that in this case provider is going to load and cache two locales at startup:
+`en.json` (as a fallback) and `ua.json` (as an active lang).
