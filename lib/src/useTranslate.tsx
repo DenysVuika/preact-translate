@@ -1,15 +1,10 @@
 import { useEffect, useState } from 'preact/hooks';
+import { LanguageData } from './languageData';
 import { TranslateOptions } from './translateOptions';
+import { TranslateParams } from './translateParams';
+import { format, getResourceUrl, getValue } from './utils';
 
-interface LanguageData {
-  [key: string]: any;
-}
-
-export interface TranslateParams {
-  [key: string]: string | number;
-}
-
-const cache: LanguageData = {};
+let cache: LanguageData = {};
 
 const defaultOptions: TranslateOptions = {
   root: '',
@@ -17,8 +12,12 @@ const defaultOptions: TranslateOptions = {
   fallbackLang: 'en'
 };
 
-export default function useTranslate(options: TranslateOptions) {
+export default function useTranslate(
+  options: TranslateOptions,
+  translations?: LanguageData
+) {
   options = Object.assign({}, defaultOptions, options);
+  cache = translations || {};
 
   const [lang, setLang] = useState(options.lang);
   const [data, setData] = useState(cache);
@@ -31,7 +30,7 @@ export default function useTranslate(options: TranslateOptions) {
 
     setReady(false);
 
-    const url = getLangUrl(options.root, langKey);
+    const url = getResourceUrl(options.root, langKey);
 
     fetch(url)
       .then(results => results.json())
@@ -52,7 +51,7 @@ export default function useTranslate(options: TranslateOptions) {
     loadData(lang);
   }, [lang]);
 
-  const t = (key: string, params: TranslateParams) => {
+  const t = (key: string, params?: TranslateParams) => {
     if (!data.hasOwnProperty(lang)) {
       return key;
     }
@@ -66,53 +65,4 @@ export default function useTranslate(options: TranslateOptions) {
   };
 
   return { lang, setLang, t, isReady };
-}
-
-function format(str: string, params: TranslateParams): string {
-  let result = str;
-
-  if (params) {
-    Object.keys(params).forEach(key => {
-      const value = params[key];
-      const template = new RegExp('{' + key + '}', 'gm');
-
-      result = result.replace(template, value.toString());
-    });
-  }
-
-  return result;
-}
-
-function getLangUrl(root: string, lang: string): string {
-  return [root, root.endsWith('/') ? '' : '/', lang, '.json'].join('');
-}
-
-function getValue(
-  languageData: LanguageData,
-  lang: string,
-  key: string
-): string {
-  let localeData = languageData[lang];
-
-  if (!localeData) {
-    return key;
-  }
-
-  const keys = key.split('.');
-  let propKey = '';
-
-  do {
-    propKey += keys.shift();
-    const value = localeData[propKey];
-    if (value !== undefined && (typeof value === 'object' || !keys.length)) {
-      localeData = value;
-      propKey = '';
-    } else if (!keys.length) {
-      localeData = key;
-    } else {
-      propKey += '.';
-    }
-  } while (keys.length);
-
-  return localeData;
 }
