@@ -20,3 +20,9 @@ steps:
     yarn lint
     yarn build.lib
   displayName: 'install, lint and build'
+
+- task: Npm@1
+    displayName: 'Check bundle size'
+    inputs:
+      command: 'custom'
+      customCommand: 'run size'
