@@ -2,3 +2,4 @@ node_modules
 dist
 build
 .rpt2_cache
+yarn-error.log
