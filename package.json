@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@denysvuika/preact-translate",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": {
     "name": "Denys Vuika",
     "email": "denys.vuika@gmail.com",
