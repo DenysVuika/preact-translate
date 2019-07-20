@@ -4,7 +4,7 @@ import { TranslateOptions } from './translateOptions';
 import { TranslateParams } from './translateParams';
 import { format, getResourceUrl, getValue } from './utils';
 
-const cache: LanguageData = {};
+let cache: LanguageData = {};
 
 const defaultOptions: TranslateOptions = {
   root: '',
@@ -12,8 +12,12 @@ const defaultOptions: TranslateOptions = {
   fallbackLang: 'en'
 };
 
-export default function useTranslate(options: TranslateOptions) {
+export default function useTranslate(
+  options: TranslateOptions,
+  translations?: LanguageData
+) {
   options = Object.assign({}, defaultOptions, options);
+  cache = translations || {};
 
   const [lang, setLang] = useState(options.lang);
   const [data, setData] = useState(cache);
@@ -47,7 +51,7 @@ export default function useTranslate(options: TranslateOptions) {
     loadData(lang);
   }, [lang]);
 
-  const t = (key: string, params: TranslateParams) => {
+  const t = (key: string, params?: TranslateParams) => {
     if (!data.hasOwnProperty(lang)) {
       return key;
     }
