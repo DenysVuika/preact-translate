@@ -15,11 +15,28 @@ steps:
       versionSpec: '10.x'
     displayName: 'Install Node.js'
 
-  - script: |
-      yarn install
-      yarn lint
-      yarn build.lib
-    displayName: 'install, lint and build'
+  - task: Npm@1
+    displayName: 'Install dependencies'
+    inputs:
+      command: 'install'
+
+  - task: Npm@1
+    displayName: 'Lint'
+    inputs:
+      command: 'custom'
+      customCommand: 'run lint'
+
+  - task: Npm@1
+    displayName: 'Build'
+    inputs:
+      command: 'custom'
+      customCommand: 'run build.lib'
+
+  - task: Npm@1
+    displayName: 'Unit Tests'
+    inputs:
+      command: 'custom'
+      customCommand: 'run test:ci'
 
   - task: Npm@1
     displayName: 'Check bundle size'
