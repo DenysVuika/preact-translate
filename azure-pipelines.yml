@@ -36,7 +36,7 @@ steps:
     displayName: 'Unit Tests'
     inputs:
       command: 'custom'
-      customCommand: 'run test:ci'
+      customCommand: 'run test'
 
   - task: Npm@1
     displayName: 'Check bundle size'
