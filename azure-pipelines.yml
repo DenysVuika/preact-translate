@@ -4,19 +4,25 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  - master
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
 
-- script: |
-    yarn install
-    yarn lint
-    yarn build.lib
-  displayName: 'install, lint and build'
+  - script: |
+      yarn install
+      yarn lint
+      yarn build.lib
+    displayName: 'install, lint and build'
+
+  - task: Npm@1
+    displayName: 'Check bundle size'
+    inputs:
+      command: 'custom'
+      customCommand: 'run size'
