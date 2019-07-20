@@ -22,7 +22,8 @@
     "build.lib.dev": "rollup -c -w",
     "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp -r dist/* node_modules/@denysvuika/preact-translate",
     "size": "size-limit",
-    "test": "jest --collect-coverage"
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll"
   },
   "eslintConfig": {
     "extends": [

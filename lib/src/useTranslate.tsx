@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'preact/hooks';
+import { LanguageData } from './languageData';
 import { TranslateOptions } from './translateOptions';
-
-interface LanguageData {
-  [key: string]: any;
-}
-
-export interface TranslateParams {
-  [key: string]: string | number;
-}
+import { TranslateParams } from './translateParams';
+import { format, getResourceUrl, getValue } from './utils';
 
 const cache: LanguageData = {};
 
@@ -31,7 +26,7 @@ export default function useTranslate(options: TranslateOptions) {
 
     setReady(false);
 
-    const url = getLangUrl(options.root, langKey);
+    const url = getResourceUrl(options.root, langKey);
 
     fetch(url)
       .then(results => results.json())
@@ -66,53 +61,4 @@ export default function useTranslate(options: TranslateOptions) {
   };
 
   return { lang, setLang, t, isReady };
-}
-
-function format(str: string, params: TranslateParams): string {
-  let result = str;
-
-  if (params) {
-    Object.keys(params).forEach(key => {
-      const value = params[key];
-      const template = new RegExp('{' + key + '}', 'gm');
-
-      result = result.replace(template, value.toString());
-    });
-  }
-
-  return result;
-}
-
-function getLangUrl(root: string, lang: string): string {
-  return [root, root.endsWith('/') ? '' : '/', lang, '.json'].join('');
-}
-
-function getValue(
-  languageData: LanguageData,
-  lang: string,
-  key: string
-): string {
-  let localeData = languageData[lang];
-
-  if (!localeData) {
-    return key;
-  }
-
-  const keys = key.split('.');
-  let propKey = '';
-
-  do {
-    propKey += keys.shift();
-    const value = localeData[propKey];
-    if (value !== undefined && (typeof value === 'object' || !keys.length)) {
-      localeData = value;
-      propKey = '';
-    } else if (!keys.length) {
-      localeData = key;
-    } else {
-      propKey += '.';
-    }
-  } while (keys.length);
-
-  return localeData;
 }
