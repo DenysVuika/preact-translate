@@ -43,3 +43,8 @@ steps:
     inputs:
       command: 'custom'
       customCommand: 'run size'
+
+  - task: PublishPipelineArtifact@0
+    inputs:
+      artifactName: 'dist-build'
+      targetPath: './dist'
