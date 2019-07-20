@@ -154,6 +154,14 @@ Then in the JSX use:
 <div>{t('messages.errors.404')}</div>
 ```
 
+You can also use composite strings like the following:
+
+```json
+{
+  "messages.errors.404": "Sorry, not found"
+}
+```
+
 ## Default language
 
 You can set the default language to use with the application by assigning the `TranslateProvider.lang` property.
@@ -166,3 +174,25 @@ You can set the default language to use with the application by assigning the `T
 
 Please note that in this case provider is going to load and cache two locales at startup:
 `en.json` (as a fallback) and `ua.json` (as an active lang).
+
+## Custom translation data
+
+You can use `TranslateProvider.translations` property to provide a custom translation data from the code.
+That helps with unit testing as well.
+
+```jsx
+const data = {
+  en: {
+    messages: {
+      404: 'Not found'
+    }
+  }
+};
+
+<TranslateProvider translations={data}>
+  <Application />
+</TranslateProvider>;
+```
+
+Note that the `TranslateProvider` is not going to fetch translation files for the `en` locale,
+and will use your custom data instead.
