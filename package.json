@@ -13,7 +13,7 @@
   "module": "dist/preact-translate.esm.js",
   "browser": "dist/preact-translate.umd.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "yarn build.lib && if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
