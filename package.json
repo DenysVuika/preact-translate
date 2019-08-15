@@ -17,7 +17,7 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src && tslint --project .",
+    "lint": "eslint lib && tslint --project .",
     "build.lib": "rollup -c && yarn copy:modules",
     "build.lib.dev": "rollup -c -w",
     "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp -r dist/* node_modules/@denysvuika/preact-translate",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "eslint": "^4.5.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "if-env": "^1.0.0",
