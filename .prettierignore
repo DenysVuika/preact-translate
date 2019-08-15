@@ -3,3 +3,4 @@ package-lock.json
 yarn.lock
 build
 dist
+coverage
