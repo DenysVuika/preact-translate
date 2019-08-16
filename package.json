@@ -35,7 +35,7 @@
     "preact-testing-library": "^0.4.0",
     "prettier": "^1.18.2",
     "rollup": "^1.19.4",
-    "rollup-plugin-copy": "^3.0.0",
+    "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript2": "^0.22.1",
     "size-limit": "^1.3.7",
