@@ -28,7 +28,7 @@
     "format:fix": "prettier --write \"./**/*.{ts,js,css,scss,html}\""
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
+    "@types/jest": "^24.0.17",
     "if-env": "^1.0.0",
     "jest": "^24.9.0",
     "preact-cli": "^2.2.1",
