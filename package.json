@@ -28,7 +28,7 @@
     "format:fix": "prettier --write \"./**/*.{ts,js,css,scss,html}\""
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^2.0.2",
+    "@size-limit/preset-small-lib": "^2.1.1",
     "@types/jest": "^24.0.17",
     "if-env": "^1.0.0",
     "jest": "^24.9.0",
