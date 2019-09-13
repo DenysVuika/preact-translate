@@ -1,6 +1,7 @@
 {
   "name": "@denysvuika/preact-translate",
   "version": "0.1.3",
+  "description": "Minimalistic translate (i18n) library for Preact",
   "author": {
     "name": "Denys Vuika",
     "email": "denys.vuika@gmail.com",
