@@ -19,7 +19,7 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "yarn format:check && tslint --project .",
-    "build.lib": "rollup -c && yarn copy:modules",
+    "build.lib": "rollup -c && yarn copy:modules && cp -r README.md dist",
     "build.lib.dev": "rollup -c -w",
     "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp -r dist/* node_modules/@denysvuika/preact-translate",
     "size": "size-limit",
