@@ -1,5 +1,5 @@
+import { cleanup, fireEvent, render } from '@testing-library/preact';
 import { h } from 'preact';
-import { cleanup, fireEvent, render } from 'preact-testing-library';
 import { useContext } from 'preact/hooks';
 import { TranslateContext, TranslateProvider } from './translateProvider';
 
