@@ -9830,10 +9830,10 @@ size-limit@2.1.6:
     globby "^10.0.1"
     read-pkg-up "^6.0.0"
 
-size-limit@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-2.2.0.tgz#12beb2d13c39dfa8b59e8948a55032f7fcdb7b0f"
-  integrity sha512-abAzntQYKcpOBL0PB1TqBt/p7bTEYi//rCSYQrtRzOVfcXhbHz8FZ18lYjtnzzGR0ZpHt9Z0EWNVBWmYmXpBCg==
+size-limit@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-2.2.1.tgz#6511471ba0296c9954df919005802d02af818d6d"
+  integrity sha512-V6SraFSyRs+JKSTJaZy5etA4ltx/LKE2pTfbMv2ojmgJLA6QwfRGZdYnED5GBzjJs3aIjrqDkmpc0QjIYkNiYg==
   dependencies:
     bytes "^3.1.0"
     chalk "^3.0.0"
