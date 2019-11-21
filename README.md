@@ -7,6 +7,10 @@ Minimalistic translate (i18n) library for Preact
 Bundle size: ~1KB  
 Live example: [Sandbox](https://codesandbox.io/embed/preact-translate-npm-tpe4f)
 
+<a href="https://www.buymeacoffee.com/denys" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="51" width="217">
+</a>
+
 ## Installing
 
 Minimal requirements: **Preact 10.0.0**
