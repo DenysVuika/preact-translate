@@ -1,9 +1,11 @@
-import { createContext, h } from 'preact';
+import { Context, createContext, h } from 'preact';
 import { LanguageData } from './languageData';
 import { TranslateOptions } from './translateOptions';
 import useTranslate from './useTranslate';
 
-const TranslateContext = createContext(null);
+const TranslateContext = createContext(null) as Context<
+  ReturnType<typeof useTranslate>
+>;
 
 const defaultOptions: TranslateOptions = {
   root: 'assets',
