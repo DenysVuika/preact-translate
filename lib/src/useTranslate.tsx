@@ -17,7 +17,7 @@ export default function useTranslate(
   translations?: LanguageData
 ) {
   options = Object.assign({}, defaultOptions, options);
-  cache = translations || {};
+  cache = translations || cache;
 
   const [lang, setLang] = useState(options.lang);
   const [data, setData] = useState(cache);
