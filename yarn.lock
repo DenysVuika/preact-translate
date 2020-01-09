@@ -8773,10 +8773,10 @@ preact-transition-group@^1.1.1:
   resolved "https://registry.yarnpkg.com/preact-transition-group/-/preact-transition-group-1.1.1.tgz#f0a49327ea515ece34ea2be864c4a7d29e5d6e10"
   integrity sha1-8KSTJ+pRXs406ivoZMSn0p5dbhA=
 
-preact@10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.2.0.tgz#cd78f83cd5381b0cdf3be9ff9a3d0376802cc466"
-  integrity sha512-U7vf4sJM4vt5RJ4x4x1YPNfBy3fMRRD2/sVf8zIH4OwsM/X3bpiRtxtTq8X6LP2F/6Aig6H05rkEVnnvrhfNwg==
+preact@10.2.1:
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.2.1.tgz#b30eb4cdc455499ee2ff82e0fa1a16fc8e20f3a4"
+  integrity sha512-BUNvmQcVtNElku7mYHexIiM5JlGNSW2BY9O2t9xk1NqA43O8wbE0cah6PAlvT7PBHvyDRJ5TAj5Fewdi9DqLoQ==
 
 preact@^8.1.0:
   version "8.4.2"
