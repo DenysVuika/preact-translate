@@ -16,7 +16,6 @@
   "peerDependencies": {
     "preact": ">=10.0.0"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DenysVuika/preact-translate.git"
