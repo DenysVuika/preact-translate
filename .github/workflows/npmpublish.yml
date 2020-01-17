@@ -44,6 +44,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           #scope: '@DenysVuika'
       - run: npm ci
+      - run: echo registry=https://npm.pkg.github.com >> .npmrc
       - run: npm run build.lib
       - run: cd dist && npm publish --access public
         env:
