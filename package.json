@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^3.0.0",
-    "@types/jest": "^24.9.0",
+    "@types/jest": "^24.9.1",
     "if-env": "^1.0.0",
     "jest": "^25.1.0",
     "preact-cli": "^2.2.1",
