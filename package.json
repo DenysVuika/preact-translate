@@ -40,7 +40,7 @@
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript2": "^0.25.3",
-    "size-limit": "^3.0.0",
+    "size-limit": "^4.0.0",
     "ts-jest": "^25.0.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
