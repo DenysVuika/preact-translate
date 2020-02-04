@@ -41,7 +41,7 @@
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript2": "^0.25.3",
     "size-limit": "^4.0.0",
-    "ts-jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-consistent-codestyle": "^1.16.0",
