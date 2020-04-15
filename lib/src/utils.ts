@@ -9,7 +9,7 @@ export function format(str: string, params?: TranslateParams): string {
   let result = str;
 
   if (params) {
-    Object.keys(params).forEach(key => {
+    Object.keys(params).forEach((key) => {
       const value = params[key];
       const template = new RegExp('{' + key + '}', 'gm');
 
