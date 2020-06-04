@@ -15,6 +15,7 @@ const defaultOptions: TranslateOptions = {
 export interface TranslateProviderProps {
   root?: string;
   lang?: string;
+  fallbackLang?: string;
   translations?: LanguageData;
   children?: any;
 }
@@ -23,7 +24,8 @@ const TranslateProvider = (props: TranslateProviderProps) => {
   const { t, setLang, lang, isReady } = useTranslate(
     {
       root: props.root || defaultOptions.root,
-      lang: props.lang || defaultOptions.lang
+      lang: props.lang || defaultOptions.lang,
+      fallbackLang: props.lang || defaultOptions.fallbackLang
     },
     props.translations
   );
