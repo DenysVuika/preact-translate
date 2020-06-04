@@ -24,7 +24,7 @@ export default function useTranslate(
   const [isReady, setReady] = useState(false);
 
   const loadData = (langKey: string) => {
-    if (data.hasOwnProperty(langKey) && Object.keys(data[langKey]).length > 0) {
+    if (data.hasOwnProperty(langKey)) {
       return;
     }
 
