@@ -244,14 +244,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
-"@babel/runtime@^7.1.5", "@babel/runtime@^7.4.3":
-  version "7.5.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
-  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.6.3":
+"@babel/runtime@^7.1.5", "@babel/runtime@^7.4.3", "@babel/runtime@^7.6.3":
   version "7.7.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.2.tgz#111a78002a5c25fc8e3361bedc9529c696b85a6a"
   integrity sha512-JONRbXbTXc9WQE2mAZd1p0Z3DZ/6vaQIkgYMSTP3KjRCyd7rCZCcfhCyX+YjwcKxcZ82UrxbRD358bpExNgrjw==
@@ -9293,10 +9286,10 @@ preact-router@^2.5.2:
   resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.6.1.tgz#eec60a9f2c07a1ae4fbc6604d8a0415742fbbd89"
   integrity sha512-Ql3fptQ8hiioIw5zUcWUq5NShl7yFR4e6KBUzLbGI7+HKMIgBnH+aOITN5IrY1rbr2vhKXBdHdd9nLbbjcJTOQ==
 
-preact-testing-library@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/preact-testing-library/-/preact-testing-library-0.4.0.tgz#0d049fe42eab28084db6b2221d9319812abdbfc1"
-  integrity sha512-w5I4kPwNdsf+JaSP3Sz2QBbA2Bk2GplnG7c957WqVixZG0rnr3syeUVXNq316Bl5uX85d7tGYShHrqMiCYDjuA==
+preact-testing-library@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/preact-testing-library/-/preact-testing-library-1.0.0.tgz#23b5f3a420eb96591a336834020cb0165cf590fe"
+  integrity sha512-LbM9BAjHboGvv1GGwRzm3K3TQ+qeYyRcjzFaexieVuIMVCgfCECSUwiZrl2LqAjHoO1tMLWSW7xwCx6M21KWfA==
   dependencies:
     "@babel/runtime" "^7.1.5"
     babel-plugin-module-resolver "^2.7.1"

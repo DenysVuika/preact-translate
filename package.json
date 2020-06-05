@@ -34,7 +34,7 @@
     "if-env": "^1.0.0",
     "jest": "^25.5.4",
     "preact-cli": "^2.2.1",
-    "preact-testing-library": "^0.4.0",
+    "preact-testing-library": "^1.0.0",
     "prettier": "^2.0.5",
     "rollup": "^2.12.0",
     "rollup-plugin-copy": "^3.3.0",
