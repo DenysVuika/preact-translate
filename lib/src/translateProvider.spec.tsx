@@ -1,7 +1,9 @@
+import { cleanup, fireEvent, render } from '@testing-library/preact';
 import { h } from 'preact';
-import { cleanup, fireEvent, render } from 'preact-testing-library';
 import { useContext } from 'preact/hooks';
 import { TranslateContext, TranslateProvider } from './translateProvider';
+
+declare const global: any;
 
 const Text = (props: { testId: string; valueKey: string; params?: any }) => {
   const { t } = useContext(TranslateContext);
@@ -10,7 +12,7 @@ const Text = (props: { testId: string; valueKey: string; params?: any }) => {
   );
 };
 
-const LangButton = props => {
+const LangButton = (props) => {
   const { setLang } = useContext(TranslateContext);
   return (
     <button data-testid="changeLang" onClick={() => setLang(props.lang)}>
@@ -20,12 +22,21 @@ const LangButton = props => {
 };
 
 describe('TranslateProvider', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => {},
+      });
+    });
+  });
+
   afterEach(cleanup);
 
   test('matches snapshot', () => {
     expect(
       render(
-        <TranslateProvider>
+        <TranslateProvider translations={{}}>
           <div />
         </TranslateProvider>
       )
@@ -35,8 +46,8 @@ describe('TranslateProvider', () => {
   test('translates a string', async () => {
     const data = {
       en: {
-        hello: 'hey there'
-      }
+        hello: 'hey there',
+      },
     };
 
     const { getByTestId } = render(
@@ -45,7 +56,7 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('hey there');
   });
 
@@ -53,9 +64,9 @@ describe('TranslateProvider', () => {
     const data = {
       en: {
         messages: {
-          404: 'Not found'
-        }
-      }
+          404: 'Not found',
+        },
+      },
     };
 
     const { getByTestId } = render(
@@ -64,15 +75,15 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('Not found');
   });
 
   test('translates a composite string', async () => {
     const data = {
       en: {
-        'messages.errors.404': 'Not found'
-      }
+        'messages.errors.404': 'Not found',
+      },
     };
 
     const { getByTestId } = render(
@@ -81,7 +92,7 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('Not found');
   });
 
@@ -89,14 +100,14 @@ describe('TranslateProvider', () => {
     const data = {
       en: {
         messages: {
-          404: 'Not found'
-        }
+          404: 'Not found',
+        },
       },
       ua: {
         messages: {
-          404: '[ua] Not found'
-        }
-      }
+          404: '[ua] Not found',
+        },
+      },
     };
 
     const { getByTestId } = render(
@@ -105,7 +116,7 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('[ua] Not found');
   });
 
@@ -113,12 +124,12 @@ describe('TranslateProvider', () => {
     const data = {
       en: {
         messages: {
-          404: 'Not found'
-        }
+          404: 'Not found',
+        },
       },
       ua: {
-        messages: {}
-      }
+        messages: {},
+      },
     };
 
     const { getByTestId } = render(
@@ -127,15 +138,15 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('Not found');
   });
 
   test('renders formatted translation', async () => {
     const data = {
       en: {
-        emailCount: 'Email count: {count}'
-      }
+        emailCount: 'Email count: {count}',
+      },
     };
 
     const { getByTestId } = render(
@@ -144,7 +155,7 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('Email count: 255');
   });
 
@@ -157,7 +168,7 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('hello');
   });
 
@@ -165,14 +176,14 @@ describe('TranslateProvider', () => {
     const data = {
       en: {
         messages: {
-          404: 'Not found'
-        }
+          404: 'Not found',
+        },
       },
       ua: {
         messages: {
-          404: '[ua] Not found'
-        }
-      }
+          404: '[ua] Not found',
+        },
+      },
     };
 
     const { getByTestId } = render(
@@ -182,11 +193,11 @@ describe('TranslateProvider', () => {
       </TranslateProvider>
     );
 
-    const value: any = await getByTestId('output');
+    const value = getByTestId('output');
     expect(value.textContent).toBe('Not found');
 
-    const button: any = await getByTestId('changeLang');
-    await fireEvent.click(button);
+    const button = getByTestId('changeLang');
+    fireEvent.click(button);
 
     expect(value.textContent).toBe('[ua] Not found');
   });
