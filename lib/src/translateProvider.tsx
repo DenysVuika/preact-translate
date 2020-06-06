@@ -9,12 +9,14 @@ const TranslateContext = createContext(null) as Context<
 
 const defaultOptions: TranslateOptions = {
   root: 'assets',
-  lang: 'en'
+  lang: 'en',
+  fallbackLang: 'en',
 };
 
 export interface TranslateProviderProps {
   root?: string;
   lang?: string;
+  fallbackLang?: string;
   translations?: LanguageData;
   children?: any;
 }
@@ -23,7 +25,8 @@ const TranslateProvider = (props: TranslateProviderProps) => {
   const { t, setLang, lang, isReady } = useTranslate(
     {
       root: props.root || defaultOptions.root,
-      lang: props.lang || defaultOptions.lang
+      lang: props.lang || defaultOptions.lang,
+      fallbackLang: props.fallbackLang || defaultOptions.fallbackLang,
     },
     props.translations
   );
@@ -34,7 +37,7 @@ const TranslateProvider = (props: TranslateProviderProps) => {
         t,
         setLang,
         lang,
-        isReady
+        isReady,
       }}
     >
       {props.children}
