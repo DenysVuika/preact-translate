@@ -25,7 +25,7 @@ const TranslateProvider = (props: TranslateProviderProps) => {
     {
       root: props.root || defaultOptions.root,
       lang: props.lang || defaultOptions.lang,
-      fallbackLang: props.lang || defaultOptions.fallbackLang
+      fallbackLang: props.fallbackLang || defaultOptions.fallbackLang
     },
     props.translations
   );
