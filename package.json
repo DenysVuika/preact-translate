@@ -32,7 +32,7 @@
     "@size-limit/preset-small-lib": "^4.5.0",
     "@testing-library/jest-dom": "^5.9.0",
     "@testing-library/preact": "^2.0.0",
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^26.0.10",
     "if-env": "^1.0.0",
     "jest": "^25.5.4",
     "preact-cli": "^2.2.1",
