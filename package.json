@@ -51,7 +51,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "preact": "10.4.8"
+    "preact": "10.5.2"
   },
   "size-limit": [
     {
