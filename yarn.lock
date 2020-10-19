@@ -9297,10 +9297,10 @@ preact-transition-group@^1.1.1:
   resolved "https://registry.yarnpkg.com/preact-transition-group/-/preact-transition-group-1.1.1.tgz#f0a49327ea515ece34ea2be864c4a7d29e5d6e10"
   integrity sha1-8KSTJ+pRXs406ivoZMSn0p5dbhA=
 
-preact@10.5.4:
-  version "10.5.4"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.4.tgz#1e4d148f949fa54656df6c9bc9218bd4e12016e3"
-  integrity sha512-u0LnVtL9WWF61RLzIbEsVFOdsahoTQkQqeRwyf4eWuLMFrxTH/C47tqcnizbUH54E4KG8UzuuZaMc9KarHmpqQ==
+preact@10.5.5:
+  version "10.5.5"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.5.tgz#c6c172ca751df27483350b8ab622abc12956e997"
+  integrity sha512-5ONLNH1SXMzzbQoExZX4TELemNt+TEDb622xXFNfZngjjM9qtrzseJt+EfiUu4TZ6EJ95X5sE1ES4yqHFSIdhg==
 
 preact@^8.1.0:
   version "8.4.2"
