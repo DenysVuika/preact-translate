@@ -29,7 +29,7 @@
     "format:fix": "prettier --write \"./**/*.{ts,js,css,scss,html}\""
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^4.6.2",
+    "@size-limit/preset-small-lib": "^4.7.0",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/preact": "^2.0.0",
     "@types/jest": "^26.0.15",
@@ -41,7 +41,7 @@
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.28.0",
-    "size-limit": "^4.6.2",
+    "size-limit": "^4.7.0",
     "ts-jest": "^25.5.1",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
