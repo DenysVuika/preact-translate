@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.10.1",
-    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/preact": "^2.0.1",
     "@types/jest": "^26.0.21",
     "if-env": "^1.0.0",
