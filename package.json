@@ -14,12 +14,12 @@
   "module": "dist/preact-translate.esm.js",
   "browser": "dist/preact-translate.umd.js",
   "scripts": {
-    "start": "yarn build.lib && if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "npm run build.lib && if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "yarn format:check && tslint --project .",
-    "build.lib": "rollup -c && yarn copy:modules && cp -r README.md dist",
+    "lint": "npm run format:check && tslint --project .",
+    "build.lib": "rollup -c && npm run copy:modules && cp -r README.md dist",
     "build.lib.dev": "rollup -c -w",
     "copy:modules": "rm -rf node_modules/@denysvuika && mkdir -p node_modules/@denysvuika/preact-translate && cp -r dist/* node_modules/@denysvuika/preact-translate",
     "size": "size-limit",
@@ -35,7 +35,7 @@
     "@types/jest": "^27.5.0",
     "if-env": "^1.0.0",
     "jest": "^25.5.4",
-    "preact-cli": "^2.2.1",
+    "preact-cli": "^3.3.5",
     "prettier": "^2.7.1",
     "rollup": "^2.72.1",
     "rollup-plugin-copy": "^3.4.0",
@@ -51,7 +51,7 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "preact": "10.7.2"
+    "preact": "^10.8.2"
   },
   "size-limit": [
     {
