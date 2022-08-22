@@ -37,7 +37,7 @@
     "jest": "^25.5.4",
     "preact-cli": "^3.3.5",
     "prettier": "^2.7.1",
-    "rollup": "^2.72.1",
+    "rollup": "^2.78.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
