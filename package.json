@@ -35,7 +35,7 @@
     "@types/jest": "^27.5.0",
     "if-env": "^1.0.0",
     "jest": "^25.5.4",
-    "preact-cli": "^3.3.5",
+    "preact-cli": "^3.4.2",
     "prettier": "^2.7.1",
     "rollup": "^2.72.1",
     "rollup-plugin-copy": "^3.4.0",
