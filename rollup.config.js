@@ -10,7 +10,6 @@ export default [
     plugins: [
       typescript({
         typescript: require('typescript'),
-        objectHashIgnoreUnknownHack: true,
       }),
       copy({
         targets: [{ src: 'lib/package.json', dest: 'dist' }],
