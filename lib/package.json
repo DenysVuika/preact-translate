@@ -1,6 +1,6 @@
 {
   "name": "@denysvuika/preact-translate",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Minimalistic translate (i18n) library for Preact",
   "author": {
     "name": "Denys Vuika",
@@ -14,7 +14,7 @@
   "browser": "preact-translate.umd.js",
   "typings": "index.d.ts",
   "peerDependencies": {
-    "preact": ">=10.0.0"
+    "preact": ">=10.13.0"
   },
   "repository": {
     "type": "git",
