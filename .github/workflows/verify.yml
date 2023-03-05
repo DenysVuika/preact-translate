@@ -18,12 +18,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+          cache: 'npm'
       - name: npm install, build, and test
         run: |
-          yarn install
-          yarn lint
-          yarn build.lib
-          yarn test
-          yarn size
+          npm ci
+          npm run lint
+          npm run build.lib
+          npm run test
+          npm run size
         env:
           CI: true
