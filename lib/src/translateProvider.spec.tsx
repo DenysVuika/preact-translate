@@ -26,7 +26,7 @@ describe('TranslateProvider', () => {
     global.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => {},
+        json: () => { /* */ },
       });
     });
   });

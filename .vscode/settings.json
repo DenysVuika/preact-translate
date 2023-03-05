@@ -1,11 +1,10 @@
 {
-    "editor.formatOnSave": true,
-    "cSpell.words": [
-      "Minimalistic",
-      "Vuika",
-      "codestyle",
-      "denysvuika",
-      "gmail",
-      "preact"
-    ]
+  "cSpell.words": [
+    "Minimalistic",
+    "Vuika",
+    "codestyle",
+    "denysvuika",
+    "gmail",
+    "preact"
+  ]
 }

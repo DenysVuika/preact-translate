@@ -11,7 +11,7 @@ export function format(str: string, params?: TranslateParams): string {
   if (params) {
     Object.keys(params).forEach((key) => {
       const value = params[key];
-      const template = new RegExp('{' + key + '}', 'gm');
+      const template = new RegExp(`{${key}}`, 'gm');
 
       result = result.replace(template, value.toString());
     });

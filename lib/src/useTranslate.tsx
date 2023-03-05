@@ -24,6 +24,7 @@ export default function useTranslate(
   const [isReady, setReady] = useState(false);
 
   const loadData = (langKey: string) => {
+    // eslint-disable-next-line no-prototype-builtins
     if (data.hasOwnProperty(langKey)) {
       return;
     }
@@ -52,6 +53,7 @@ export default function useTranslate(
   }, [lang]);
 
   const t = (key: string, params?: TranslateParams) => {
+    // eslint-disable-next-line no-prototype-builtins
     if (!data.hasOwnProperty(lang)) {
       return key;
     }
