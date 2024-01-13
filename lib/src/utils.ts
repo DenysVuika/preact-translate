@@ -1,11 +1,28 @@
 import { LanguageData } from './languageData';
-import { TranslateParams } from './translateParams';
+import { type TranslateParam, type TranslateParams } from './translateParams';
+import { type JSX } from "preact";
 
 export function getResourceUrl(root: string, lang: string): string {
   return [root, !root || root.endsWith('/') ? '' : '/', lang, '.json'].join('');
 }
 
-export function format(str: string, params?: TranslateParams): string {
+export type FormatReturnType<T> = T extends JSX.Element ? T[] : string;
+
+export function format<T extends TranslateParam>(str: string, params?: TranslateParams<T>): FormatReturnType<T> {
+  if (params && Object.values(params).some(param => typeof param === 'object')) {
+    const separators = Object.keys(params).map(key => `{${key}}`).join(`|`);
+    const regex = new RegExp(`(?=${separators})|(?<=${separators})`, `g`);
+
+    return str.split(regex).map(part => {
+      if (/^{[^{}]+}$/.test(part)) {
+        const withoutBraces = part.substring(1, part.length - 1);
+        return params[withoutBraces] ? params[withoutBraces] : part;
+      } else {
+        return part;
+      }
+    }) as FormatReturnType<T>;
+  }
+
   let result = str;
 
   if (params) {
@@ -17,7 +34,7 @@ export function format(str: string, params?: TranslateParams): string {
     });
   }
 
-  return result;
+  return result as FormatReturnType<T>;
 }
 
 export function getValue(
