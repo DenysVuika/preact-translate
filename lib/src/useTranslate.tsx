@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'preact/hooks';
 import { LanguageData } from './languageData';
 import { TranslateOptions } from './translateOptions';
-import { TranslateParams } from './translateParams';
+import { type TranslateParam, type TranslateParams } from './translateParams';
 import { format, getResourceUrl, getValue } from './utils';
 
 let cache: LanguageData = {};
@@ -52,10 +52,10 @@ export default function useTranslate(
     loadData(lang);
   }, [lang]);
 
-  const t = (key: string, params?: TranslateParams) => {
+  const t = <T,>(key: string, params?: TranslateParams<TranslateParam>): T => {
     // eslint-disable-next-line no-prototype-builtins
     if (!data.hasOwnProperty(lang)) {
-      return key;
+      return key as T;
     }
 
     let value = getValue(data, lang, key);
@@ -63,7 +63,7 @@ export default function useTranslate(
       value = getValue(data, options.fallbackLang, key);
     }
 
-    return format(value, params);
+    return format(value, params) as T;
   };
 
   return { lang, setLang, t, isReady };
