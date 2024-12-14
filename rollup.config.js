@@ -9,12 +9,12 @@ export default [
     external: ['preact', 'preact/hooks'],
     plugins: [
       typescript({
-        typescript: require('typescript'),
+        typescript: require('typescript')
       }),
       copy({
-        targets: [{ src: 'lib/package.json', dest: 'dist' }],
+        targets: [{ src: 'lib/package.json', dest: 'dist' }]
       }),
-      terser(),
+      terser()
     ],
     output: [
       {
@@ -23,11 +23,11 @@ export default [
         format: 'umd',
         globals: {
           preact: 'preact',
-          'preact/hooks': 'preact/hooks',
-        },
+          'preact/hooks': 'preact/hooks'
+        }
       },
       { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' },
-    ],
-  },
+      { file: pkg.module, format: 'es' }
+    ]
+  }
 ];

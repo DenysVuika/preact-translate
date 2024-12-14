@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import { LanguageData } from './languageData';
 import { TranslateOptions } from './translateOptions';
 import { TranslateParams } from './translateParams';
@@ -9,7 +9,7 @@ let cache: LanguageData = {};
 const defaultOptions: TranslateOptions = {
   root: '',
   lang: 'en',
-  fallbackLang: 'en'
+  fallbackLang: 'en',
 };
 
 export default function useTranslate(
@@ -23,48 +23,52 @@ export default function useTranslate(
   const [data, setData] = useState(cache);
   const [isReady, setReady] = useState(false);
 
-  const loadData = (langKey: string) => {
-    // eslint-disable-next-line no-prototype-builtins
-    if (data.hasOwnProperty(langKey)) {
-      return;
-    }
+  const loadData = useCallback(
+    async (langKey: string) => {
+      if (data[langKey]) {
+        return;
+      }
 
-    setReady(false);
+      setReady(false);
 
-    const url = getResourceUrl(options.root, langKey);
-
-    fetch(url)
-      .then(results => results.json())
-      .then(resource => {
-        cache[langKey] = resource;
+      try {
+        const url = getResourceUrl(options.root, langKey);
+        const response = await fetch(url);
+        cache[langKey] = await response.json();
+      } catch (error) {
+        console.error(`Failed to load language data for ${langKey}:`, error);
+      } finally {
         setData({ ...cache });
         setReady(true);
-      })
-      .catch(error => {
-        console.log('Aww, snap.', error);
-        setData({ ...cache });
-        setReady(true);
-      });
-  };
+      }
+    },
+    [data, options.root]
+  );
 
   useEffect(() => {
-    loadData(options.fallbackLang);
-    loadData(lang);
-  }, [lang]);
+    const loadLanguages = async () => {
+      await loadData(options.fallbackLang);
+      await loadData(lang);
+    };
+    void loadLanguages();
+  }, [lang, loadData, options.fallbackLang]);
 
-  const t = (key: string, params?: TranslateParams) => {
-    // eslint-disable-next-line no-prototype-builtins
-    if (!data.hasOwnProperty(lang)) {
-      return key;
-    }
+  const t = useMemo(
+    () => (key: string, params?: TranslateParams) => {
+      // eslint-disable-next-line no-prototype-builtins
+      if (!data.hasOwnProperty(lang)) {
+        return key;
+      }
 
-    let value = getValue(data, lang, key);
-    if (value === key && lang !== options.fallbackLang) {
-      value = getValue(data, options.fallbackLang, key);
-    }
+      let value = getValue(data, lang, key);
+      if (value === key && lang !== options.fallbackLang) {
+        value = getValue(data, options.fallbackLang, key);
+      }
 
-    return format(value, params);
-  };
+      return format(value, params);
+    },
+    [data, lang, options.fallbackLang]
+  );
 
   return { lang, setLang, t, isReady };
 }
