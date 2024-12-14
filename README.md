@@ -15,12 +15,6 @@ Live example: [Sandbox](https://codesandbox.io/embed/preact-translate-npm-tpe4f)
 
 Minimal requirements: **Preact 10.0.0**
 
-Add the `.npmrc` file to your project root if you are using [GitHub Package Registry](https://help.github.com/en/articles/about-github-package-registry)
-
-```yaml
-registry=https://npm.pkg.github.com
-```
-
 Using Yarn:
 
 ```sh

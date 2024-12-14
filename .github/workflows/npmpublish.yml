@@ -35,20 +35,20 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-          registry-url: https://npm.pkg.github.com/
-          #scope: '@DenysVuika'
-      - run: npm i
-      - run: echo registry=https://npm.pkg.github.com >> .npmrc
-      - run: npm run build.lib
-      - run: cd dist && npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.gpr_token}}
+#  publish-gpr:
+#    needs: build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: 18
+#          cache: 'npm'
+#          registry-url: https://npm.pkg.github.com/
+#          #scope: '@DenysVuika'
+#      - run: npm i
+#      - run: echo registry=https://npm.pkg.github.com >> .npmrc
+#      - run: npm run build.lib
+#      - run: cd dist && npm publish --access public
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.gpr_token}}
