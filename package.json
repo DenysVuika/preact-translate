@@ -36,7 +36,9 @@
     "ignorePatterns": [
       "build/"
     ],
-    "plugins": ["prettier"],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "prettier/prettier": "error",
       "@typescript-eslint/no-explicit-any": "warn"
@@ -53,7 +55,9 @@
     "eslint": "^8.57.1",
     "eslint-config-preact": "^1.5.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-compat": "^6.0.2",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
     "if-env": "^1.0.4",
     "jest": "^29.7.0",
     "jest-preset-preact": "^4.1.1",
