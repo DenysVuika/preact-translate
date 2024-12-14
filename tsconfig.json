@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
+    "importHelpers": true,
     "declaration": true,
     "declarationDir": "./dist",
-    "module": "es6",
+    "module": "ESNext",
     "outDir": "./dist",
-    "target": "es5",
+    "target": "ES2022",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
 
     "moduleResolution": "node",
-    "downlevelIteration": true,
     "jsx": "react",
     "jsxFactory": "h",
-    "esModuleInterop": true,
     "typeRoots": ["node_modules/@types"]
   },
   "include": ["lib/**/*"],
