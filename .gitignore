@@ -4,3 +4,5 @@ build
 .rpt2_cache
 yarn-error.log
 coverage
+.idea
+size-plugin.json
