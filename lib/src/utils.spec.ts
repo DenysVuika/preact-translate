@@ -29,7 +29,7 @@ describe('Utils', () => {
       const template = 'Good luck, {param1} {param2}!';
       const params = {
         param1: 'Mr.',
-        param2: 'Gorsky',
+        param2: 'Gorsky'
       };
 
       const value = format(template, params);
@@ -61,9 +61,9 @@ describe('Utils', () => {
       const data = {
         en: {
           messages: {
-            404: 'Error, not found.',
-          },
-        },
+            404: 'Error, not found.'
+          }
+        }
       };
 
       const value = getValue(data, 'en', 'messages.404');
@@ -73,8 +73,8 @@ describe('Utils', () => {
     test('returns original key if nested value not found', () => {
       const data = {
         en: {
-          messages: {},
-        },
+          messages: {}
+        }
       };
 
       const value = getValue(data, 'en', 'messages.500');
@@ -84,8 +84,8 @@ describe('Utils', () => {
     test('supports tol-level values with dots', () => {
       const data = {
         en: {
-          'messages.errors.500': 'Aw, snap!',
-        },
+          'messages.errors.500': 'Aw, snap!'
+        }
       };
 
       const value = getValue(data, 'en', 'messages.errors.500');
