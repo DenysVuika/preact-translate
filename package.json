@@ -38,7 +38,8 @@
     ],
     "plugins": ["prettier"],
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "@typescript-eslint/no-explicit-any": "warn"
     }
   },
   "devDependencies": {
@@ -47,8 +48,8 @@
     "@testing-library/preact": "^3.2.4",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.2",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
     "eslint": "^8.57.1",
     "eslint-config-preact": "^1.5.0",
     "eslint-config-prettier": "^9.1.0",
