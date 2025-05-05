@@ -64,7 +64,7 @@
     "jest-preset-preact": "^4.1.1",
     "preact-cli": "^3.5.1",
     "prettier": "^3.4.2",
-    "rollup": "^2.79.2",
+    "rollup": "^4.40.1",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "size-limit": "^4.12.0",
