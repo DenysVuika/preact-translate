@@ -1,4 +1,4 @@
-import { Context, createContext, h } from 'preact';
+import { ComponentChildren, Context, createContext, h } from 'preact';
 import { LanguageData } from './languageData';
 import { TranslateOptions } from './translateOptions';
 import useTranslate from './useTranslate';
@@ -18,7 +18,7 @@ export interface TranslateProviderProps {
   lang?: string;
   fallbackLang?: string;
   translations?: LanguageData;
-  children?: any;
+  children?: ComponentChildren;
 }
 
 const TranslateProvider = (props: TranslateProviderProps) => {

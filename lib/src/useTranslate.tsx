@@ -55,8 +55,7 @@ export default function useTranslate(
 
   const t = useMemo(
     () => (key: string, params?: TranslateParams) => {
-      // eslint-disable-next-line no-prototype-builtins
-      if (!data.hasOwnProperty(lang)) {
+      if (!Object.prototype.hasOwnProperty.call(data, lang)) {
         return key;
       }
 
