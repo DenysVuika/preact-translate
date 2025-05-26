@@ -8,10 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm i
       - run: npm test
@@ -23,10 +23,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version-file: '.nvmrc'
           cache: 'npm'
           registry-url: https://registry.npmjs.org/
       - run: npm i
@@ -34,21 +34,3 @@ jobs:
       - run: cd dist && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
-#  publish-gpr:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v3
-#      - uses: actions/setup-node@v3
-#        with:
-#          node-version: 18
-#          cache: 'npm'
-#          registry-url: https://npm.pkg.github.com/
-#          #scope: '@DenysVuika'
-#      - run: npm i
-#      - run: echo registry=https://npm.pkg.github.com >> .npmrc
-#      - run: npm run build.lib
-#      - run: cd dist && npm publish --access public
-#        env:
-#          NODE_AUTH_TOKEN: ${{secrets.gpr_token}}
