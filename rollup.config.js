@@ -1,6 +1,6 @@
 import terser from '@rollup/plugin-terser';
 import copy from 'rollup-plugin-copy';
-import typescript from 'rollup-plugin-typescript2';
+import esbuild from 'rollup-plugin-esbuild';
 import pkg from './package.json';
 
 export default [
@@ -8,8 +8,12 @@ export default [
     input: 'lib/index.ts',
     external: ['preact', 'preact/hooks'],
     plugins: [
-      typescript({
-        typescript: require('typescript'),
+      esbuild({
+        include: /\.[jt]sx?$/, // Transpile .js, .ts, .jsx, .tsx files
+        exclude: /node_modules/, // Exclude node_modules
+        sourceMap: true, // Generate source maps
+        minify: process.env.NODE_ENV === 'production', // Minify in production
+        target: 'es2015', // Target ES2015
       }),
       copy({
         targets: [{ src: 'lib/package.json', dest: 'dist' }],
