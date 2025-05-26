@@ -1,5 +1,5 @@
-import copy from 'rollup-plugin-copy';
 import terser from '@rollup/plugin-terser';
+import copy from 'rollup-plugin-copy';
 import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
 

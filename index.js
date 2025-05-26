@@ -1,6 +1,6 @@
 import {
   TranslateContext,
-  TranslateProvider
+  TranslateProvider,
 } from '@denysvuika/preact-translate';
 import { useContext } from 'preact/hooks';
 import './style';
