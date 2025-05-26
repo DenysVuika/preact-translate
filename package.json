@@ -26,24 +26,6 @@
     "test": "jest --coverage",
     "test:watch": "jest --watchAll"
   },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "preact",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended"
-    ],
-    "ignorePatterns": [
-      "build/"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-      "@typescript-eslint/no-explicit-any": "warn"
-    }
-  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@rollup/plugin-terser": "^0.4.4",
