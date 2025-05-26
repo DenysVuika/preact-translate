@@ -29,7 +29,9 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@rollup/plugin-terser": "^0.4.4",
-    "@size-limit/preset-small-lib": "^4.12.0",
+    "@size-limit/esbuild": "^11.2.0",
+    "@size-limit/esbuild-why": "^11.2.0",
+    "@size-limit/preset-small-lib": "^11.2.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/preact": "^3.2.4",
     "@types/jest": "^29.5.14",
@@ -41,7 +43,7 @@
     "rollup": "^2.79.2",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-typescript2": "^0.36.0",
-    "size-limit": "^4.12.0",
+    "size-limit": "^11.2.0",
     "typescript": "^4.9.5"
   },
   "dependencies": {
@@ -51,18 +53,15 @@
   "size-limit": [
     {
       "path": "dist/preact-translate.cjs.js",
-      "limit": "2 KB",
-      "webpack": false
+      "limit": "6.2 KB"
     },
     {
       "path": "dist/preact-translate.esm.js",
-      "limit": "2 KB",
-      "webpack": false
+      "limit": "5.5 KB"
     },
     {
       "path": "dist/preact-translate.umd.js",
-      "limit": "2 KB",
-      "webpack": false
+      "limit": "6.5 KB"
     }
   ],
   "jest": {
