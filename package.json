@@ -27,7 +27,7 @@
     "test:watch": "jest --watchAll"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.6",
     "@rollup/plugin-terser": "^0.4.4",
     "@size-limit/esbuild": "^11.2.0",
     "@size-limit/esbuild-why": "^11.2.0",
