@@ -32,7 +32,7 @@
     "@size-limit/esbuild": "^11.2.0",
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/preact": "^3.2.4",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.21",
